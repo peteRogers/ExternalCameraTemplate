@@ -20,7 +20,7 @@ import AVFoundation
 	}
 	
 	func setPreviewLayer(layer:AVCaptureVideoPreviewLayer){
-		//print(layer.frame)
+		print("preview layer in model size \(layer.frame)")
 		self.previewView = layer
 	}
 	

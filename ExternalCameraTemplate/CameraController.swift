@@ -132,6 +132,7 @@ class CameraController: NSViewController, AVCaptureVideoDataOutputSampleBufferDe
 //				)
 				return
             }
+		
 		cm?.doObservation(imageBuffer: frame)
 
 

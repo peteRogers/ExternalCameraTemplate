@@ -23,6 +23,7 @@ class VisionAnalyser{
 	
 	func makeAnalysis(imageBuffer: CVImageBuffer){
 		var requestOptions: [VNImageOption: Any] = [:]
+		
 		if let cameraData = CMGetAttachment(imageBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
 			requestOptions = [.cameraIntrinsics: cameraData]
 		}
@@ -36,7 +37,7 @@ class VisionAnalyser{
 	
 	func handleTextDetection(request: VNRequest, error: Error?) {
 		guard let observations = request.results as? [VNTextObservation] else { return }
-		print(observations)
+		//print(observations)
 		var results:[AnalysisResult] = []
 		for o in observations{
 			let a = AnalysisResult(resultTotal: 0, rect: o.boundingBox)
